@@ -2,7 +2,6 @@ package com.rigor.controller;
 
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -15,12 +14,13 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import com.rigor.service.UserService;
+import com.rigor.service.UserServiceImpl;
 import com.rigor.model.User;
 
 @RestController
 public class UserRestController {
-	@Autowired
-	UserService userService; // Service which will do all data retrieval/manipulation work
+	
+	UserService userService=new UserServiceImpl(); // Service which will do all data retrieval/manipulation work
 	
 	
 	// -------------------Create a User--------------------------------------------------------

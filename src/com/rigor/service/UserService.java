@@ -2,7 +2,7 @@ package com.rigor.service;
 
 import java.util.List;
 
-import com.rigor.model.*;
+import com.rigor.model.User;
 
 
 

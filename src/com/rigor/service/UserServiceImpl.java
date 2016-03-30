@@ -8,7 +8,7 @@ import java.util.concurrent.atomic.AtomicLong;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.rigor.model.*;
+import com.rigor.model.User;
 
 @Service("userService")
 @Transactional
