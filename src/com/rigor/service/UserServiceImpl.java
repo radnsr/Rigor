@@ -6,7 +6,7 @@ import java.util.List;
 import java.util.concurrent.atomic.AtomicLong;
 
 import org.springframework.stereotype.Service;
-
+import org.springframework.transaction.annotation.Transactional;
 
 import com.rigor.model.*;
 
@@ -47,6 +47,7 @@ public class UserServiceImpl implements UserService{
 	public void saveUser(User user) {
 		user.setId(counter.incrementAndGet());
 		users.add(user);
+		System.out.println("User created!");
 	}
 
 	public void updateUser(User user) {
