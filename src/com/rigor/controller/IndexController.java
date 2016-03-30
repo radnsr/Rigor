@@ -17,4 +17,9 @@ public class IndexController {
 		
 		return "dept_form";
 	}
+	@RequestMapping("/u_form")
+	public String UserForm(){
+		
+		return "UserManagement";
+	}
 }

@@ -2,6 +2,7 @@ package com.rigor.controller;
 
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -14,33 +15,15 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.util.UriComponentsBuilder;
 
 import com.rigor.service.UserService;
-import com.rigor.service.UserServiceImpl;
 import com.rigor.model.User;
 
 @RestController
 public class UserRestController {
+	@Autowired
+	UserService userService; // Service which will do all data retrieval/manipulation work
 	
-	UserService userService=new UserServiceImpl(); // Service which will do all data retrieval/manipulation work
 	
-	
-	// -------------------Create a User--------------------------------------------------------
-
-	@RequestMapping(value = "/user/", method = RequestMethod.POST)
-	public ResponseEntity<Void> createUser(@RequestBody User user, UriComponentsBuilder ucBuilder) {
-		System.out.println("Creating User " + user.getUsername());
-
-		if (userService.isUserExist(user)) {
-			System.out.println("A User with name " + user.getUsername() + " already exist");
-			return new ResponseEntity<Void>(HttpStatus.CONFLICT);
-		}
-
-		userService.saveUser(user);
-
-		HttpHeaders headers = new HttpHeaders();
-		headers.setLocation(ucBuilder.path("/user/{id}").buildAndExpand(user.getId()).toUri());
-		return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
-	}
-    
+	 
     //-------------------Retrieve All Users--------------------------------------------------------
      
     @RequestMapping(value = "/user/", method = RequestMethod.GET)
@@ -56,7 +39,7 @@ public class UserRestController {
     
     //-------------------Retrieve Single User--------------------------------------------------------
      
-    @RequestMapping(value = "/user/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_XML_VALUE )
+    @RequestMapping(value = "/user/{id}", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_VALUE )
     public ResponseEntity<User> getUser(@PathVariable("id") long id) {
         System.out.println("Fetching User with id " + id);
         User user = userService.findById(id);
@@ -66,8 +49,31 @@ public class UserRestController {
         }
         return new ResponseEntity<User>(user, HttpStatus.OK);
     }
-    //------------------- Update a User --------------------------------------------------------
+ 
+     
+     
+    //-------------------Create a User--------------------------------------------------------
+     
+    @RequestMapping(value = "/user/", method = RequestMethod.POST)
+    public ResponseEntity<Void> createUser(@RequestBody User user,    UriComponentsBuilder ucBuilder) {
+        System.out.println("Creating User " + user.getUsername());
+ 
+        if (userService.isUserExist(user)) {
+            System.out.println("A User with name " + user.getUsername() + " already exist");
+            return new ResponseEntity<Void>(HttpStatus.CONFLICT);
+        }
+ 
+        userService.saveUser(user);
+ 
+        HttpHeaders headers = new HttpHeaders();
+        headers.setLocation(ucBuilder.path("/user/{id}").buildAndExpand(user.getId()).toUri());
+        return new ResponseEntity<Void>(headers, HttpStatus.CREATED);
+    }
+ 
     
+     
+    //------------------- Update a User --------------------------------------------------------
+     
     @RequestMapping(value = "/user/{id}", method = RequestMethod.PUT)
     public ResponseEntity<User> updateUser(@PathVariable("id") long id, @RequestBody User user) {
         System.out.println("Updating User " + id);

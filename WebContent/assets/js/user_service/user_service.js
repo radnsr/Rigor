@@ -1,6 +1,6 @@
 'use strict';
 
-var App = angular.module('myApp',[]);
+
 
 App.factory('UserService', ['$http', '$q', function($http, $q){
 
@@ -33,7 +33,7 @@ App.factory('UserService', ['$http', '$q', function($http, $q){
 		    },
 		    
 		    updateUser: function(user, id){
-					return $http.put('http://localhost:8080/Spring4MVCAngularJSExample/user/'+id, user)
+					return $http.put('http://localhost:8080/RigorProject/user/'+id, user)
 							.then(
 									function(response){
 										return response.data;
@@ -46,7 +46,7 @@ App.factory('UserService', ['$http', '$q', function($http, $q){
 			},
 		    
 			deleteUser: function(id){
-					return $http.delete2('http://localhost:8080/Spring4MVCAngularJSExample/user/'+id)
+					return $http.delete('http://localhost:8080/RigorProject/user/'+id)
 							.then(
 									function(response){
 										return response.data;

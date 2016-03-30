@@ -1,12 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <title>Login Page</title>
 <link rel="stylesheet"
 	href="https://ajax.googleapis.com/ajax/libs/angular_material/0.8.3/angular-material.min.css">
-<link rel="stylesheet" href="assets/css/login.css" />
+<link rel="stylesheet" href="<c:url value='/assets/css/login.css' />" />
 </head>
 <body>
 	<hgroup>
