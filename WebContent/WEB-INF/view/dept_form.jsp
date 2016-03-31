@@ -18,23 +18,23 @@
 		<div class="inset" hide-sm></div>
 
 
-		<form ng-controller="AppCtrl2" ng-submit="submit()" name="myForm">
+		<form ng-controller="AppCtrl2 as ctrl" ng-submit="submit()" name="myForm">
 
 			<md-input-container class="md-block"> <label>
-				Name</label> <input required name="name" ng-model="project.Name">
+				Name</label> <input required name="name" ng-model="ctrl.user.Name">
 			<div ng-messages="myForm.name.$error">
 				<div ng-message="required">This is required.</div>
 			</div>
 			</md-input-container>
 			<md-input-container class="md-block"> <label>
-				Address</label> <input required name="address" ng-model="project.Address">
+				Address</label> <input required name="address" ng-model="ctrl.user.Address">
 			<div ng-messages="myForm.address.$error">
 				<div ng-message="required">This is required.</div>
 			</div>
 			</md-input-container>
 			<md-input-container class="md-block"> <label>
 				Email</label> <input required type="email" name="email"
-				ng-model="project.Email" minlength="5" maxlength="50"
+				ng-model="ctrl.user.Email" minlength="5" maxlength="50"
 				ng-pattern="/^.+@.+\..+$/" />
 			<div ng-messages="myForm.email.$error">
 				<div ng-message="required">This is required.</div>
