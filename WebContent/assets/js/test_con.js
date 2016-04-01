@@ -5,26 +5,36 @@ App.controller('AppCtrl2', ['$scope', 'RestService', function($scope, RestServic
     self.users=[];
     
     self.fetchAllUsers = function(){
-    	RestService.fetchAllUsers()
-            .then(
-					       function(d) {
-						        self.users = d;
-					       },
-      					function(errResponse){
-      						console.error('Error while fetching Currencies');
-      					}
-			       );
+    	//RestService.fetchAllUsers()
+    	//alert("FETCH!!");
+           
     };
      
-    $scope.submit = function(user){
-    	alert("In Con"+ self.user.Name);
+    self.createUser = function(user){
+    	
     	RestService.createUser(user)
 	              .then(
                 self.fetchAllUsers, 
 			              function(errResponse){
-				               console.error('Error while creating User.');
+                	
+				               console.log(errResponse.data);
 			              }	
             );
+    };
+    self.submit = function() {
+        if(self.user.id==null){
+        	
+            console.log('Saving New User', self.user);    
+            self.createUser(self.user);
+        }else{
+            self.updateUser(self.user, self.user.id);
+            console.log('User updated with id ', self.user.id);
+        }
+        self.reset();
+    };
+    self.reset = function(){
+        self.user={id:null,username:'',address:'',email:''};
+        $scope.myForm.$setPristine(); //reset Form
     };
 	
 }]);

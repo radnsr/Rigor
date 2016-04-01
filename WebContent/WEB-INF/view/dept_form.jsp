@@ -18,7 +18,7 @@
 		<div class="inset" hide-sm></div>
 
 
-		<form ng-controller="AppCtrl2 as ctrl" ng-submit="submit()" name="myForm">
+		<form ng-controller="AppCtrl2 as ctrl" ng-submit="ctrl.submit()" name="myForm">
 
 			<md-input-container class="md-block"> <label>
 				Name</label> <input required name="name" ng-model="ctrl.user.Name">

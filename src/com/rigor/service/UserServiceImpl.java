@@ -37,7 +37,7 @@ public class UserServiceImpl implements UserService{
 	
 	public User findByName(String name) {
 		for(User user : users){
-			if(user.getUsername().equalsIgnoreCase(name)){
+			if(user.getName().equalsIgnoreCase(name)){
 				return user;
 			}
 		}
@@ -66,7 +66,7 @@ public class UserServiceImpl implements UserService{
 	}
 
 	public boolean isUserExist(User user) {
-		return findByName(user.getUsername())!=null;
+		return findByName(user.getName())!=null;
 	}
 	
 	public void deleteAllUsers(){

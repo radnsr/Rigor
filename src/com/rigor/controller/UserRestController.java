@@ -56,10 +56,10 @@ public class UserRestController {
      
     @RequestMapping(value = "/user/", method = RequestMethod.POST)
     public ResponseEntity<Void> createUser(@RequestBody User user,    UriComponentsBuilder ucBuilder) {
-        System.out.println("Creating User " + user.getUsername());
+        System.out.println("Creating User " + user.getName());
  
         if (userService.isUserExist(user)) {
-            System.out.println("A User with name " + user.getUsername() + " already exist");
+            System.out.println("A User with name " + user.getName() + " already exist");
             return new ResponseEntity<Void>(HttpStatus.CONFLICT);
         }
  
@@ -85,7 +85,7 @@ public class UserRestController {
             return new ResponseEntity<User>(HttpStatus.NOT_FOUND);
         }
  
-        currentUser.setUsername(user.getUsername());
+        currentUser.setName(user.getName());
         currentUser.setAddress(user.getAddress());
         currentUser.setEmail(user.getEmail());
          

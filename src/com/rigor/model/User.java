@@ -2,22 +2,14 @@ package com.rigor.model;
 
 public class User {
 	private long id;
+	private String Name;
 
-	private String username;
+	private String Address;
 
-	private String address;
-
-	private String email;
+	private String Email;
 
 	public User() {
 		id = 0;
-	}
-
-	public User(long id, String username, String address, String email) {
-		this.id = id;
-		this.username = username;
-		this.address = address;
-		this.email = email;
 	}
 
 	public long getId() {
@@ -28,28 +20,35 @@ public class User {
 		this.id = id;
 	}
 
-	public String getUsername() {
-		return username;
+	public String getName() {
+		return Name;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
+	public void setName(String name) {
+		Name = name;
 	}
 
 	public String getAddress() {
-		return address;
+		return Address;
 	}
 
 	public void setAddress(String address) {
-		this.address = address;
+		Address = address;
 	}
 
 	public String getEmail() {
-		return email;
+		return Email;
 	}
 
 	public void setEmail(String email) {
-		this.email = email;
+		Email = email;
+	}
+
+	public User(long id, String Name, String Address, String Email) {
+		this.id = id;
+		this.Name = Name;
+		this.Address = Address;
+		this.Email = Email;
 	}
 
 	@Override
@@ -76,7 +75,7 @@ public class User {
 
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", username=" + username + ", address=" + address + ", email=" + email + "]";
+		return "User [id=" + id + ", Name=" + Name + ", Address=" + Address + ", Email=" + Email + "]";
 	}
 
 }
