@@ -1,7 +1,7 @@
 'use strict';
 App.controller('AppCtrl2', ['$scope', 'RestService', function($scope, RestService) {
 	var self = this;
-    self.user={id:null,Name:'',Address:'',Email:''};
+    self.user={id:null,name:'',address:'',email:''};
     self.users=[];
     
     self.fetchAllUsers = function(){
