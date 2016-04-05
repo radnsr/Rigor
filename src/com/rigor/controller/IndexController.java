@@ -4,7 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/dept")
+@RequestMapping("/index")
 public class IndexController {
 
 	@RequestMapping("/abc")
@@ -21,5 +21,10 @@ public class IndexController {
 	public String UserForm(){
 		
 		return "UserManagement";
+	}
+	@RequestMapping("/user")
+	public String User(){
+		
+		return "user";
 	}
 }

@@ -12,7 +12,7 @@ App.controller('AppCtrl', ['$scope', '$mdBottomSheet','$mdSidenav', '$mdDialog',
     },
     {
       link : '',
-      title: 'Friends',
+      title: 'Users',
       icon: 'group'
     },
     {
