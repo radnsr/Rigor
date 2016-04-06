@@ -12,7 +12,7 @@ public class IndexController {
 		
 		return "dashboard";
 	}
-	@RequestMapping("/form")
+	@RequestMapping("/dept")
 	public String DeptForm(){
 		
 		return "dept_form";

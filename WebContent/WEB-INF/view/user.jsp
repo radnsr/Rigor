@@ -15,16 +15,38 @@
 
 		<%@ include file="header.jsp"%>
 
+<md-content md-theme="docs-dark" layout="row" layout-padding>
+     <div flex="33">
+    [flex="20"]
+  </div>
+    <div flex="46">
+      <md-input-container>
+        <label>Title</label>
+        <input ng-model="user.title">
+      </md-input-container>
+      <md-input-container>
+        <label>Email</label>
+        <input ng-model="user.email" type="email">
+      </md-input-container>
+    </div>
+       <div flex="20">
+    [flex="20"]
+  </div>
+  </md-content>
+
 		<md-content flex md-scroll-y> <ui-view layout="column"
 			layout-fill layout-padding>
 		<div class="inset" hide-sm></div>
 
-<md-toolbar class="md-table-toolbar md-default">
-  <div class="md-toolbar-tools">
-    <span>Nutrition</span>
+<div layout="row">
+  <div flex="33">
+    [flex="20"]
   </div>
-</md-toolbar>
+  <div flex="66">
+    [flex="70"]
+  </div>
 
+</div>
    <md-card ng-controller="tableCtrl" >
         
         <md-toolbar class="md-table-toolbar md-default" ng-hide="options.rowSelection && selected.length">
