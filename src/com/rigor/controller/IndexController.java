@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RequestMapping("/index")
 public class IndexController {
 
-	@RequestMapping("/abc")
+	@RequestMapping("/dashboard")
 	public String dashboard(){
 		
 		return "dashboard";

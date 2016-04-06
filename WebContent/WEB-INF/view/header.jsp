@@ -3,9 +3,10 @@
       </md-button>
       <md-toolbar ng-show="!showSearch">
         <div class="md-toolbar-tools">
-          <md-button ng-click="toggleSidenav('left')" hide-gt-md aria-label="Menu">
+          <md-button ng-click="toggleSidenav('left')" show-gt-md aria-label="Menu">
             <ng-md-icon icon="menu"></ng-md-icon>
           </md-button>
+
           <h3>
             VirtusaPolaris
           </h3>

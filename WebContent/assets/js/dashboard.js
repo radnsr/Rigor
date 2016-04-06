@@ -6,12 +6,12 @@ App.controller('AppCtrl', ['$scope', '$mdBottomSheet','$mdSidenav', '$mdDialog',
   };
  	$scope.menu = [
     {
-      link : '',
+      link : 'dashboard',
       title: 'Dashboard',
       icon: 'dashboard'
     },
     {
-      link : '',
+      link : 'user',
       title: 'Users',
       icon: 'group'
     },

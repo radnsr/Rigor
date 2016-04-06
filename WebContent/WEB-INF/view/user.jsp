@@ -99,7 +99,7 @@
 	    'use strict';
 	    
 	    $mdThemingProvider.theme('default')
-	      .primaryPalette('red');
+	      .primaryPalette('blue-grey');
 	}])
 
 	.controller('tableCtrl', ['$mdEditDialog', '$q', '$scope', '$timeout', function ($mdEditDialog, $q, $scope, $timeout) {

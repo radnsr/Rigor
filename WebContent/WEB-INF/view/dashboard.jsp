@@ -17,7 +17,24 @@
 			layout-fill layout-padding>
 		<div class="inset" hide-sm></div>
 
-		</ui-view> </md-content>
+		<md-grid-list md-cols-xs="1" md-cols-sm="2" md-cols-md="4"
+			md-cols-gt-md="6" md-row-height-gt-md="1:1" md-row-height="2:2"
+			md-gutter="12px" md-gutter-gt-sm="8px"> <md-grid-tile
+			class="gray" md-rowspan="3" md-colspan="2" md-colspan-sm="1"
+			md-colspan-xs="1"> </md-grid-tile>
+			 <md-grid-tile class="green">
+		<md-button href="user"> <ng-md-icon
+			icon="supervisor_account" style="fill: pink" size="100"></ng-md-icon>
+		</md-button> <md-grid-tile-footer>
+		<h3>Users</h3>
+		</md-grid-tile-footer> </md-grid-tile> 
+			 <md-grid-tile class="green">
+		<md-button ng-click="toggleSidenav('left')"> <ng-md-icon
+			icon="supervisor_account" style="fill: pink" size="100"></ng-md-icon>
+		</md-button> <md-grid-tile-footer>
+		<h3>Feedback Form</h3>
+		</md-grid-tile-footer> </md-grid-tile> 
+		</md-grid-list> </ui-view> </md-content>
 	</div>
 	<%@include file="global_js.jsp"%>
 </body>
