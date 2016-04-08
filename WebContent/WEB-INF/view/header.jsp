@@ -1,6 +1,4 @@
- <md-button class="md-fab md-fab-bottom-right" aria-label="Add" ng-click="showAdd($event)">
-        <ng-md-icon icon="add"></ng-md-icon>
-      </md-button>
+
       <md-toolbar ng-show="!showSearch">
         <div class="md-toolbar-tools">
           <md-button ng-click="toggleSidenav('left')" show-gt-md aria-label="Menu">

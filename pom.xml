@@ -27,7 +27,7 @@
 		</plugins>
 	</build>
 
-		<properties>
+	<properties>
 		<springframework.version>4.2.0.RELEASE</springframework.version>
 		<jackson.version>2.5.3</jackson.version>
 	</properties>
@@ -59,8 +59,14 @@
 			<artifactId>jstl</artifactId>
 			<version>1.2</version>
 		</dependency>
-		
+
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>4.2.3.Final</version>
+		</dependency>
+
 
 	</dependencies>
-	
-	</project>
+
+</project>

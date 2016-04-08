@@ -27,4 +27,14 @@ public class IndexController {
 		
 		return "user";
 	}
+	@RequestMapping("/master_dept")
+	public String MasterDept(){
+		
+		return "master_dept";
+	}
+	@RequestMapping("/dataTab")
+	public String MasterDept2(){
+		
+		return "dataTab";
+	}
 }
