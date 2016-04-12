@@ -22,6 +22,7 @@ public class HibernateUtilities {
 		}
 		catch(HibernateException exception)
 		{
+			exception.printStackTrace();
 			System.out.println("Problem creating session factory!");
 		}
 	}

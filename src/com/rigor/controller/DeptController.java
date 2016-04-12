@@ -20,8 +20,8 @@ public class DeptController {
 	
 	 @RequestMapping(value = "/dept_post/", method = RequestMethod.POST)
 	    public ResponseEntity<Void> createDept(@RequestBody Department dept,    UriComponentsBuilder ucBuilder) {
-	        System.out.println("Creating Deaprtment " + dept.getDept_name());
-	 
+	        System.out.println("Creating Deaprtment " + dept);
+	 dept.setDept_id("D0002");
 	      
 	        deptService.saveDept(dept);
 	 
